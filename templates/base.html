@@ -1,0 +1,13 @@
+<!-- templates/base.html -->
+{% load static %}
+<head>
+    <title>{% block title %}Countdown{% endblock title %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>

@@ -1,0 +1,44 @@
+<!-- templates/countdown_index.html -->
+{% extends "base.html" %}
+
+{% block title %}Countdown{% endblock title %}
+
+{% block page_content %}
+
+{% for count_to in count_tos %}
+    <div id="count_to">{{ count_to }}</div>
+    <div id="message">
+    {% if count_to > 0 %}
+        {% for counter in counters %}
+            {{ counter.start_msg }}
+        {% endfor %}
+        {% else %}
+        {% for counter in counters %}
+            {{ counter.end_msg }}
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endfor %}
+
+<br>
+
+<div id="clockdiv">
+    <div>
+        <span class="days"></span>
+        <div class="smalltext">DAYS</div>
+    </div>
+    <div>
+        <span class="hours"></span>
+        <div class="smalltext">HOURS</div>
+    </div>
+    <div>
+        <span class="minutes"></span>
+        <div class="smalltext">MINUTES</div>
+    </div>
+    <div>
+        <span class="seconds"></span>
+        <div class="smalltext">SECONDS</div>
+    </div>
+</div>
+
+{% endblock %}
